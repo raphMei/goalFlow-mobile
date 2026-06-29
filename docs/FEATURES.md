@@ -54,8 +54,8 @@ Règles :
 - [ ] Choix priorité
 - [ ] Niveau actuel
 - [ ] Temps disponible
-- [ ] Planning semaine
-- [ ] Contraintes
+- [ ] Planning semaine (jours actifs, repos planifiés, jours légers)
+- [ ] Contraintes (présentiel/télétravail, charge quotidienne)
 - [ ] Moments préférés
 - [ ] Style de programme
 - [ ] Résumé avant génération
@@ -74,6 +74,7 @@ Règles :
 - [x] Créer LogEntry
 - [x] Créer LogType
 - [x] Créer DayContext
+- [x] Refactor jours de repos (UserSchedule / DayContext — remplace Shabbat)
 - [x] Créer TaskStatus
 - [x] Créer TaskDetail
 - [x] Créer TaskStep
@@ -100,7 +101,7 @@ Règles :
 - [ ] Trier les tâches par heure
 - [ ] Limiter la charge quotidienne
 - [ ] Gérer versions courtes
-- [ ] Gérer Shabbat
+- [ ] Gérer les jours de repos planifiés
 - [ ] Prévoir logique kasher future
 
 ---
@@ -114,7 +115,7 @@ Règles :
 - [ ] Checkbox
 - [ ] Bouton commencer
 - [ ] État tâche terminée
-- [ ] État journée Shabbat
+- [ ] État journée de repos planifiée
 - [ ] État journée vide
 
 ---
@@ -151,7 +152,7 @@ Règles :
 - [ ] Calcul complétion jour
 - [ ] Calcul complétion semaine
 - [ ] Streaks
-- [ ] Shabbat protège les streaks
+- [ ] Les jours de repos planifiés protègent les streaks
 - [ ] Résumé semaine
 - [ ] Suggestions d’ajustement simples
 
@@ -163,7 +164,7 @@ Règles :
 - [ ] Modifier planning semaine
 - [ ] Modifier contraintes
 - [ ] Modifier préférences
-- [ ] Activer/désactiver Shabbat
+- [ ] Modifier jours de repos et jours légers
 - [ ] Préparer kasher
 - [ ] Export / reset local data
 
@@ -172,7 +173,7 @@ Règles :
 ## Phase 12 — Qualité
 
 - [ ] Tests generateDailyPlan
-- [ ] Tests règle Shabbat
+- [ ] Tests jours de repos planifiés
 - [ ] Tests streaks
 - [ ] Revue architecture
 - [ ] Nettoyage imports

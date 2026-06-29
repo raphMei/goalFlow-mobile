@@ -10,11 +10,21 @@ export type Weekday =
 /** Origine d'une tâche dans le plan du jour. */
 export type DailyPlanItemSource = 'template' | 'manual' | 'generated' | 'adjusted';
 
+/** Raison d'un jour de repos ou d'une charge réduite. */
+export type RestReason = 'planned_rest' | 'low_capacity' | 'manual';
+
 /** Préférences de planning utilisateur. */
 export type UserSchedule = {
   workModeByWeekday: Record<Weekday, WorkMode>;
-  shabbatEnabled: boolean;
-  /** Préparé pour une contrainte alimentaire future. */
+  /** Nombre de jours actifs souhaités par semaine (1–7). */
+  activeDaysPerWeek?: number;
+  /** Jours de repos planifiés (ex. saturday). */
+  restDays?: Weekday[];
+  /** Jours à charge réduite — versions courtes ou moins de tâches. */
+  lightDays?: Weekday[];
+  /** Si true, les streaks sont protégés pendant les restDays planifiés. */
+  protectStreaksOnRestDays?: boolean;
+  /** Préférence alimentaire future — indépendante des jours de repos. */
   kosherEnabled?: boolean;
   dailyCapacityMinutes?: number;
 };
@@ -23,9 +33,11 @@ export type UserSchedule = {
 export type DayContext = {
   /** Format YYYY-MM-DD */
   date: string;
+  weekday: Weekday;
   workMode: WorkMode;
-  isShabbat: boolean;
   isRestDay: boolean;
+  isLightDay?: boolean;
+  restReason?: RestReason;
   availableMinutes?: number;
   kosherRequired?: boolean;
   activeGoalIds: string[];

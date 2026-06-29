@@ -1,6 +1,6 @@
 import type { Goal, RecommendedAction } from '@/domain/goals/goal.types';
 import type { LogEntry } from '@/domain/logs/log.types';
-import type { DailyPlanItem } from '@/domain/planning/planning.types';
+import type { DailyPlanItem, DayContext, UserSchedule } from '@/domain/planning/planning.types';
 
 const exampleGoal: Goal = {
   id: 'goal-1',
@@ -81,6 +81,43 @@ const exampleLogEntry: LogEntry = {
   note: 'Séance un peu plus longue que prévu.',
 };
 
+const exampleUserSchedule: UserSchedule = {
+  workModeByWeekday: {
+    monday: 'office',
+    tuesday: 'office',
+    wednesday: 'remote',
+    thursday: 'office',
+    friday: 'office',
+    saturday: 'rest',
+    sunday: 'free',
+  },
+  activeDaysPerWeek: 5,
+  restDays: ['saturday'],
+  lightDays: ['friday'],
+  protectStreaksOnRestDays: true,
+  kosherEnabled: false,
+  dailyCapacityMinutes: 90,
+};
+
+const exampleRestDayContext: DayContext = {
+  date: '2026-07-04',
+  weekday: 'saturday',
+  workMode: 'rest',
+  isRestDay: true,
+  restReason: 'planned_rest',
+  activeGoalIds: ['goal-1', 'goal-2'],
+};
+
+const exampleLightDayContext: DayContext = {
+  date: '2026-07-03',
+  weekday: 'friday',
+  workMode: 'office',
+  isRestDay: false,
+  isLightDay: true,
+  availableMinutes: 45,
+  activeGoalIds: ['goal-1'],
+};
+
 describe('domain types smoke', () => {
   it('accepts a Goal fixture', () => {
     expect(exampleGoal.category).toBe('sport');
@@ -104,5 +141,14 @@ describe('domain types smoke', () => {
     if (exampleLogEntry.type === 'duration') {
       expect(exampleLogEntry.payload.seconds).toBe(612);
     }
+  });
+
+  it('accepts UserSchedule and DayContext fixtures with rest days model', () => {
+    expect(exampleUserSchedule.restDays).toContain('saturday');
+    expect(exampleUserSchedule.protectStreaksOnRestDays).toBe(true);
+    expect(exampleRestDayContext.isRestDay).toBe(true);
+    expect(exampleRestDayContext.restReason).toBe('planned_rest');
+    expect(exampleLightDayContext.isLightDay).toBe(true);
+    expect(exampleLightDayContext.isRestDay).toBe(false);
   });
 });

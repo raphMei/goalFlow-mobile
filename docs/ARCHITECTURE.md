@@ -25,7 +25,7 @@ Le domain contient la logique pure.
 Exemples :
 
 - generateDailyPlan
-- isShabbat
+- buildDayContext
 - calculateStreak
 - buildRecommendedActions
 - adaptPlanToSchedule

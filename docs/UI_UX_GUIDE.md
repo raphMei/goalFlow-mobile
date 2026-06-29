@@ -76,7 +76,7 @@ Il doit afficher :
 
 - Bonjour David 👋
 - date ;
-- type de journée ;
+- type de journée (actif, léger, repos planifié) ;
 - rythme du jour ;
 - progression ;
 - objectifs du jour ;
@@ -140,9 +140,12 @@ Questions principales :
 - priorité ;
 - niveau ;
 - temps disponible ;
-- planning ;
+- planning (présentiel / télétravail) ;
+- nombre de jours actifs par semaine ;
+- choix des jours de repos planifiés ;
+- jours légers ;
 - contraintes ;
 - moments préférés ;
 - rythme ;
-- alimentation si nécessaire ;
+- alimentation si nécessaire (kasher — préférence future) ;
 - résumé avant génération.
