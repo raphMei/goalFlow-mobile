@@ -1,0 +1,117 @@
+# Architecture Rules — GoalFlow Mobile
+
+## Principe principal
+
+L’architecture doit être domain-first.
+
+La logique métier doit être indépendante de React Native.
+
+React Native affiche l’interface.
+Le dossier domain contient les règles métier.
+
+## Structure cible
+
+src/
+app/
+Navigation Expo Router.
+
+domain/
+goals/
+planning/
+tasks/
+logs/
+rules/
+progress/
+onboarding/
+
+features/
+today/
+goals/
+onboarding/
+task-detail/
+progress/
+profile/
+
+infrastructure/
+storage/
+supabase/
+
+shared/
+components/
+hooks/
+theme/
+utils/
+
+## Rôle des dossiers
+
+### src/app
+
+Contient uniquement :
+
+- routes Expo Router ;
+- layouts ;
+- redirections simples.
+
+Pas de logique métier complexe.
+
+### src/domain
+
+Contient :
+
+- types métier ;
+- règles ;
+- moteur de génération ;
+- calculs ;
+- templates ;
+- fonctions pures.
+
+Interdit :
+
+- React ;
+- composants ;
+- AsyncStorage ;
+- Supabase ;
+- navigation.
+
+### src/features
+
+Contient :
+
+- écrans ;
+- composants liés à une fonctionnalité ;
+- hooks spécifiques à une feature.
+
+### src/infrastructure
+
+Contient :
+
+- stockage local ;
+- repositories ;
+- futurs services Supabase ;
+- accès externe.
+
+### src/shared
+
+Contient :
+
+- composants UI génériques ;
+- thème ;
+- helpers ;
+- hooks génériques.
+
+## Règle importante
+
+Une feature ne doit pas casser l’architecture.
+
+Si une feature nécessite une nouvelle abstraction, expliquer pourquoi avant de la créer.
+
+## Exemple attendu
+
+Bonne approche :
+
+- domain/planning/generateDailyPlan.ts
+- features/today/TodayScreen.tsx affiche le plan
+
+Mauvaise approche :
+
+- générer toutes les tâches directement dans TodayScreen.tsx

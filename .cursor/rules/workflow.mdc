@@ -1,0 +1,61 @@
+# Workflow Rules — GoalFlow Mobile
+
+## Développement étape par étape
+
+Toujours avancer par petites étapes.
+
+Une étape = une intention claire.
+
+Exemples :
+
+- créer la navigation ;
+- créer les types métier ;
+- créer generateDailyPlan ;
+- créer l’écran Aujourd’hui ;
+- ajouter le check-off ;
+- ajouter AsyncStorage.
+
+Ne pas mélanger plusieurs grosses features.
+
+## Roadmap
+
+Le fichier docs/FEATURES.md est la source de vérité.
+
+Avant de commencer :
+
+- lire docs/FEATURES.md ;
+- identifier la feature ;
+- passer la feature en [~] si elle commence.
+
+Après validation :
+
+- passer la feature en [x] uniquement si elle est terminée et testée.
+
+## Explication obligatoire
+
+Toujours expliquer :
+
+- ce qui change ;
+- pourquoi ;
+- comment tester ;
+- ce qui peut casser ;
+- ce qu’il faut vérifier.
+
+## Complexité
+
+Si une feature est complexe :
+
+- proposer une V1 simple ;
+- isoler les risques ;
+- éviter de tout faire d’un coup ;
+- proposer un découpage en sous-features.
+
+## Qualité
+
+Avant de terminer une étape :
+
+- vérifier TypeScript ;
+- vérifier imports ;
+- vérifier logique métier ;
+- vérifier séparation domain/features/infrastructure ;
+- vérifier qu’aucun secret n’est exposé.

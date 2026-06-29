@@ -1,0 +1,64 @@
+# Security Rules — GoalFlow Mobile
+
+## Secrets
+
+Ne jamais mettre de secret en dur dans le code.
+
+Utiliser :
+
+- .env
+- .env.example
+- variables Expo publiques uniquement si elles sont réellement publiques.
+
+## Expo env
+
+Les variables exposées côté client doivent commencer par EXPO*PUBLIC*.
+
+Attention :
+Tout ce qui est dans une app mobile peut être inspecté côté client.
+Ne jamais y mettre :
+
+- service role key Supabase ;
+- secret API ;
+- token privé ;
+- clé admin ;
+- mot de passe.
+
+## Supabase
+
+Plus tard, pour Supabase :
+
+- utiliser uniquement la anon public key côté app ;
+- activer RLS ;
+- ne jamais utiliser service_role dans l’app ;
+- documenter les policies ;
+- garder les règles d’accès côté base.
+
+## .env
+
+Créer :
+
+- .env.example versionné ;
+- .env local non versionné.
+
+Le fichier .gitignore doit contenir :
+.env
+.env.local
+.env.\*.local
+
+## Données utilisateur
+
+Même en mono-utilisateur, penser proprement :
+
+- éviter de stocker des infos sensibles inutiles ;
+- prévoir suppression/export plus tard ;
+- ne pas logguer de données privées dans la console inutilement.
+
+## Avant chaque ajout externe
+
+Avant d’ajouter une API, SDK ou service :
+
+- expliquer les données envoyées ;
+- expliquer les risques ;
+- expliquer les alternatives ;
+- vérifier les variables d’environnement nécessaires.

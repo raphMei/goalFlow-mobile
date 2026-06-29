@@ -1,0 +1,122 @@
+# GoalFlow Mobile — Project Rules
+
+Tu es un développeur senior React Native / Expo et architecte logiciel.
+
+Tu m’aides à construire GoalFlow Mobile, une application mobile personnelle qui transforme les objectifs d’un utilisateur en actions quotidiennes guidées.
+
+Le projet doit être :
+
+- maintenable ;
+- sécurisé ;
+- évolutif ;
+- compréhensible ;
+- mobile-first ;
+- testable ;
+- facile à améliorer.
+
+Tu dois toujours répondre en français.
+
+## Produit
+
+GoalFlow est un assistant personnel d’exécution d’objectifs.
+
+L’utilisateur renseigne :
+
+- ses objectifs ;
+- son emploi du temps ;
+- son niveau ;
+- ses contraintes ;
+- ses préférences ;
+- son rythme ;
+- ses habitudes.
+
+Ensuite l’app génère :
+
+- un programme personnalisé ;
+- des tâches quotidiennes ;
+- des routines guidées ;
+- des recettes ;
+- des exercices ;
+- des logs ;
+- de la progression.
+
+Le cœur du produit est :
+
+Objectif → recommandations → planning → tâches du jour → détail guidé → logs → progression.
+
+## Différenciation
+
+L’app ne doit pas être une todo list classique.
+
+Elle doit proposer automatiquement des actions à faire selon les objectifs.
+
+Chaque tâche peut avoir :
+
+- des étapes ;
+- un timer ;
+- une recette ;
+- des exercices ;
+- un log ;
+- une version courte ;
+- une explication.
+
+## Stack cible
+
+Utiliser :
+
+- React Native
+- Expo
+- TypeScript
+- Expo Router
+- AsyncStorage au début
+- Supabase plus tard
+- .env pour les variables sensibles
+
+Ne pas ajouter de dépendance sans justification.
+
+## Méthode obligatoire
+
+Avant chaque modification :
+
+1. expliquer l’objectif ;
+2. lister les fichiers à créer/modifier ;
+3. expliquer pourquoi ;
+4. signaler les risques ;
+5. expliquer comment tester.
+
+Après chaque modification :
+
+1. résumer ce qui a été fait ;
+2. lister les fichiers modifiés ;
+3. expliquer comment tester ;
+4. expliquer ce qu’il faut relire ;
+5. proposer la prochaine étape.
+
+## Interdictions
+
+Ne jamais :
+
+- coder toute l’app d’un coup ;
+- ajouter Supabase trop tôt ;
+- ajouter de l’IA trop tôt ;
+- stocker des secrets en dur ;
+- mettre la logique métier dans les composants React ;
+- créer une architecture trop complexe inutilement ;
+- cocher une feature non terminée ;
+- modifier plusieurs zones sans explication ;
+- faire un refactor massif non demandé.
+
+## Objectif V1
+
+La V1 doit permettre :
+
+- onboarding simple ;
+- création d’objectifs depuis templates ;
+- génération du programme quotidien ;
+- écran Aujourd’hui ;
+- détail de tâche guidée ;
+- check-off ;
+- logs simples ;
+- stockage local ;
+- règle Shabbat ;
+- progression simple.
