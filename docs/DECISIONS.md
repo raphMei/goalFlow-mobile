@@ -142,3 +142,32 @@ Conséquences :
 - suppression directe de `shabbatEnabled` et `isShabbat` (aucun consommateur en production) ;
 - la validation (`activeDaysPerWeek` vs `restDays`), la dérivation `DayContext` et la protection des streaks restent hors scope de cette étape ;
 - les contraintes personnelles spécifiques pourront être ajoutées plus tard comme préférences utilisateur.
+
+---
+
+## ADR-007 — Moteur `generateDailyPlan` V1
+
+Date : 2026-06-29
+
+Décision :
+
+- implémenter `generateDailyPlan` comme **fonction pure** dans `src/domain/planning/generateDailyPlan.ts` ;
+- retourner un objet riche `DailyPlan` (date, weekday, items, flags repos/léger, `streaksProtected`) ;
+- appliquer en V1 des filtres simples sur l’énergie, la durée, le `workMode` et une capacité quotidienne en minutes ;
+- générer des `TaskDetail` **minimaux** selon `taskKind` (contenu guidé complet reporté à la Phase 8) ;
+- exposer `hasShortVersion` comme flag métier sans logique de version courte ;
+- utiliser une règle **temporaire** pour les actions `weekly` : `hash(action.id) % 7 === weekdayIndex` ;
+- laisser hors scope V1 : `scheduledAt`, tri horaire, `buildDayContext`, stockage, UI, Supabase et filtre kasher.
+
+Pourquoi :
+
+- livrer un moteur testable et consommable par l’écran Aujourd’hui sans sur-architecturer ;
+- garder le domaine indépendant de React Native et de toute persistance ;
+- documenter explicitement les raccourcis V1 pour faciliter les itérations ultérieures.
+
+Conséquences :
+
+- la règle weekly sera remplacée par `preferredWeekdays`, `timesPerWeek` ou `recurrenceRule` ;
+- les écrans détail de tâche devront enrichir ou remplacer les `TaskDetail` minimaux ;
+- `buildDayContext` et l’assignation horaire (`scheduledAt`) restent des features séparées ;
+- la logique kasher (`kosherRequired`) n’est pas appliquée par le moteur en V1.

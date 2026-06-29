@@ -1,4 +1,4 @@
-import type { GoalCategory } from '@/domain/goals/goal.types';
+import type { Goal, GoalCategory, GoalTemplate } from '@/domain/goals/goal.types';
 import type { TaskDetail, TaskStatus } from '@/domain/tasks/task.types';
 
 /** Mode de journée — présentiel, télétravail, libre ou repos. */
@@ -41,6 +41,25 @@ export type DayContext = {
   availableMinutes?: number;
   kosherRequired?: boolean;
   activeGoalIds: string[];
+};
+
+/** Plan quotidien généré par le moteur métier. */
+export type DailyPlan = {
+  date: string;
+  weekday: Weekday;
+  items: DailyPlanItem[];
+  isRestDay: boolean;
+  isLightDay?: boolean;
+  restReason?: RestReason;
+  streaksProtected: boolean;
+};
+
+/** Entrée du moteur `generateDailyPlan`. */
+export type GenerateDailyPlanInput = {
+  goals: Goal[];
+  templates: GoalTemplate[];
+  dayContext: DayContext;
+  userSchedule: UserSchedule;
 };
 
 /** Tâche planifiée affichée dans l'écran Aujourd'hui. */
