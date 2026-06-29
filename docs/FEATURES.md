@@ -7,6 +7,7 @@ Règles :
 - [x] terminé, testé et validé
 - Ne jamais cocher une feature sans test.
 - Une feature doit être petite et relisible.
+- **Chaque feature commence sur une branche Git dédiée** (`feature/<nom>`) — jamais sur `main`. Voir [SETUP.md](./SETUP.md#git-workflow-obligatoire).
 
 ---
 
@@ -17,8 +18,8 @@ Règles :
 - [ ] Vérifier le lancement sur iPhone / Android avec Expo Go
 - [x] Configurer ESLint / Prettier
 - [x] Créer la structure src
-- [ ] Créer le thème visuel
-- [ ] Créer les composants UI de base
+- [x] Créer le thème visuel
+- [~] Créer les composants UI de base
 
 ---
 
@@ -35,12 +36,12 @@ Règles :
 
 ## Phase 2 — UI de base
 
-- [ ] Créer ScreenContainer
-- [ ] Créer AppText
-- [ ] Créer Button
-- [ ] Créer Card
-- [ ] Créer Badge
-- [ ] Créer ProgressBar
+- [~] Créer ScreenContainer
+- [~] Créer AppText
+- [~] Créer Button
+- [~] Créer Card
+- [~] Créer Badge
+- [~] Créer ProgressBar
 - [ ] Créer TaskCard
 - [ ] Créer GoalCard
 
@@ -64,16 +65,18 @@ Règles :
 
 ## Phase 4 — Modèle métier
 
-- [ ] Créer Goal
-- [ ] Créer GoalTemplate
-- [ ] Créer RecommendedAction
-- [ ] Créer DailyPlanItem
-- [ ] Créer UserSchedule
-- [ ] Créer LogEntry
-- [ ] Créer DayContext
-- [ ] Créer TaskStatus
-- [ ] Créer TaskDetail
-- [ ] Créer TaskStep
+- [x] Créer Goal
+- [x] Créer GoalCategory
+- [x] Créer GoalTemplate
+- [x] Créer RecommendedAction
+- [x] Créer DailyPlanItem
+- [x] Créer UserSchedule
+- [x] Créer LogEntry
+- [x] Créer LogType
+- [x] Créer DayContext
+- [x] Créer TaskStatus
+- [x] Créer TaskDetail
+- [x] Créer TaskStep
 
 ---
 

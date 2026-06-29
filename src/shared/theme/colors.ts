@@ -1,11 +1,17 @@
 export type ColorScheme = 'light' | 'dark';
 
 export type ThemeColors = {
-  background: string;
+  backgroundWarm: string;
   surface: string;
-  text: string;
-  textMuted: string;
+  surfaceSoft: string;
+  textPrimary: string;
+  textSecondary: string;
+  border: string;
+  success: string;
+  warning: string;
+  error: string;
   primary: string;
+  onPrimary: string;
   tabBar: string;
   tabBarBorder: string;
   tabIconDefault: string;
@@ -15,11 +21,17 @@ export type ThemeColors = {
 
 export const colors: Record<ColorScheme, ThemeColors> = {
   light: {
-    background: '#FFFBF5',
+    backgroundWarm: '#FFFBF5',
     surface: '#FFFFFF',
-    text: '#1C1917',
-    textMuted: '#78716C',
+    surfaceSoft: '#F5F0EB',
+    textPrimary: '#1C1917',
+    textSecondary: '#78716C',
+    border: '#F5E6D3',
+    success: '#10B981',
+    warning: '#F59E0B',
+    error: '#EF4444',
     primary: '#F97316',
+    onPrimary: '#FFFFFF',
     tabBar: '#FFFFFF',
     tabBarBorder: '#F5E6D3',
     tabIconDefault: '#A8A29E',
@@ -27,11 +39,17 @@ export const colors: Record<ColorScheme, ThemeColors> = {
     tint: '#F97316',
   },
   dark: {
-    background: '#1C1917',
+    backgroundWarm: '#1C1917',
     surface: '#292524',
-    text: '#FAFAF9',
-    textMuted: '#A8A29E',
+    surfaceSoft: '#44403C',
+    textPrimary: '#FAFAF9',
+    textSecondary: '#A8A29E',
+    border: '#44403C',
+    success: '#34D399',
+    warning: '#FBBF24',
+    error: '#F87171',
     primary: '#FB923C',
+    onPrimary: '#FFFFFF',
     tabBar: '#292524',
     tabBarBorder: '#44403C',
     tabIconDefault: '#78716C',

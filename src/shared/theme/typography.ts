@@ -14,4 +14,16 @@ export const typography = {
     fontWeight: '400' as const,
     lineHeight: 22,
   },
+  label: {
+    fontSize: 14,
+    fontWeight: '600' as const,
+    lineHeight: 20,
+  },
+  caption: {
+    fontSize: 12,
+    fontWeight: '400' as const,
+    lineHeight: 16,
+  },
 };
+
+export type Typography = typeof typography;

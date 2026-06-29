@@ -1,7 +1,7 @@
-import { colors, type ColorScheme, type ThemeColors } from '@/shared/theme/colors';
+import { getTheme, type GoalFlowTheme } from '@/shared/theme';
 import { useColorScheme } from '@/shared/components/useColorScheme';
 
-export function useTheme(): { scheme: ColorScheme; colors: ThemeColors } {
+export function useTheme(): GoalFlowTheme {
   const scheme = useColorScheme() ?? 'light';
-  return { scheme, colors: colors[scheme] };
+  return getTheme(scheme);
 }

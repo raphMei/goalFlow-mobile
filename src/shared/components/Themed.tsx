@@ -1,6 +1,11 @@
 /**
- * Learn more about Light and Dark modes:
- * https://docs.expo.io/guides/color-schemes/
+ * @deprecated Legacy Expo template — ne pas utiliser pour les nouveaux écrans.
+ *
+ * Préférer :
+ * - `useTheme()` depuis `@/shared/hooks/useTheme`
+ * - `AppText` et `ScreenContainer` pour le design system GoalFlow
+ *
+ * Ce fichier sera supprimé une fois les derniers usages migrés.
  */
 import { Text as DefaultText, View as DefaultView } from 'react-native';
 
@@ -20,7 +25,7 @@ export function useThemeColor(
   props: { light?: string; dark?: string },
   colorName: keyof typeof colors.light & keyof typeof colors.dark,
 ) {
-  const theme = useColorScheme();
+  const theme = useColorScheme() ?? 'light';
   const colorFromProps = props[theme];
 
   if (colorFromProps) {
@@ -32,14 +37,14 @@ export function useThemeColor(
 
 export function Text(props: TextProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
-  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'text');
+  const color = useThemeColor({ light: lightColor, dark: darkColor }, 'textPrimary');
 
   return <DefaultText style={[{ color }, style]} {...otherProps} />;
 }
 
 export function View(props: ViewProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
-  const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
+  const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'backgroundWarm');
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
 }

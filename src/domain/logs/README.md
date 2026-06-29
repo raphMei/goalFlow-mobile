@@ -1,5 +1,5 @@
 # `domain/logs/`
 
-Journal d'**activité** et historique (complétions, notes, événements).
+Types du journal d'**activité**.
 
-Exemples futurs : agrégation pour la progression, streaks, audit.
+Fichier V1 : `log.types.ts` — `LogType`, `LogEntry`.
