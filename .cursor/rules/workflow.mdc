@@ -39,10 +39,53 @@ Utiliser des noms courts, en kebab-case, décrivant une seule intention.
 
 1. Lancer `npm run ci` en local.
 2. Résumer les fichiers modifiés.
-3. Proposer un message de commit clair (1–2 phrases, orienté « pourquoi »).
-4. Pousser la branche : `git push -u origin HEAD`.
-5. Préparer la PR (voir `docs/PR_CHECKLIST.md`).
-6. **Ne jamais merger sans validation** de l’utilisateur.
+3. **Proposer un message de commit** (voir section « Messages de commit » ci-dessous) — **obligatoire à chaque fin d’amélioration**, sans attendre que l’utilisateur le demande.
+4. **Ne pas committer ni pousser** sauf demande explicite de l’utilisateur.
+5. Pousser la branche : `git push -u origin HEAD` (uniquement si demandé).
+6. Préparer la PR (voir `docs/PR_CHECKLIST.md`).
+7. **Ne jamais merger sans validation** de l’utilisateur.
+
+### Messages de commit
+
+À **chaque fin d’amélioration de feature** (correction, ajout, refactor), analyser les changements (`git status`, `git diff`) et proposer un message adapté.
+
+**Format :**
+
+```
+<type>: <résumé court en français>
+
+<corps optionnel — bullets si plusieurs changements>
+```
+
+**Types :**
+
+| Type       | Usage                                      |
+| ---------- | ------------------------------------------ |
+| `feat`     | Nouvelle fonctionnalité                    |
+| `fix`      | Correction de bug                          |
+| `refactor` | Refactoring sans changement de comportement |
+| `chore`    | Maintenance, deps, config                  |
+| `docs`     | Documentation seule                        |
+| `test`     | Ajout ou correction de tests               |
+| `ci`       | CI/CD, workflows                           |
+| `style`    | Formatage, pas de changement logique       |
+
+**Règles :**
+
+- 1 intention = 1 commit (ne pas mélanger feature + docs + fix unrelated).
+- Titre : impératif, ≤ 72 caractères, orienté « quoi / pourquoi ».
+- Si plusieurs fichiers ou zones touchées, ajouter un corps avec bullets.
+- S’aligner sur l’historique du repo (`git log --oneline -5`).
+- Si les changements mélangent plusieurs intentions, **proposer plusieurs commits** avec les fichiers à staguer pour chacun.
+
+**Exemple :**
+
+```
+fix: corriger le typage Pressable dans Button
+
+- Transmettre le state Pressable au lieu de reconstruire { pressed, hovered }
+- Corrige l'échec typecheck en CI
+```
 
 ### Règles strictes
 
