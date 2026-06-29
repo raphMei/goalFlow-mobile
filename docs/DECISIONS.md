@@ -80,14 +80,40 @@ Décision :
 
 - les composants UI de base (`ScreenContainer`, `AppText`, `Button`, `Card`, `Badge`, `ProgressBar`) sont des **primitives génériques** réutilisables dans tout l’app ;
 - `TaskCard` et `GoalCard` seront créés plus tard, lorsque les types métier et l’écran Aujourd’hui seront prêts ;
-- `DesignSystemShowcase` (branché temporairement sur l’onglet Aujourd’hui) sert uniquement à la validation visuelle et sera retiré une fois les écrans réels en place.
+- `DesignSystemShowcase` est une **route temporaire de développement** (`/dev/design-system`), protégée par `__DEV__`, hors bottom navigation ;
+- la route dev doit être **supprimée ou masquée avant une release production**.
 
 Pourquoi :
 
 - séparer les primitives UI des composants métier évite de figer trop tôt des cartes couplées au domaine ;
-- le showcase permet de valider le design system sans attendre la navigation ni les écrans fonctionnels.
+- le showcase permet de valider le design system sans polluer l’onglet Aujourd’hui.
 
 Conséquences :
 
-- `TodayScreen` affiche le showcase jusqu’à l’implémentation de la Phase 7 ;
+- `TodayScreen` affiche un placeholder stylé jusqu’à l’implémentation de la Phase 7 ;
+- en production (`!__DEV__`), `/dev/design-system` redirige vers l’accueil ;
 - `TaskCard` / `GoalCard` restent hors scope de cette étape.
+
+---
+
+## ADR-005 — Bottom navigation GoalFlow
+
+Date : 2026-06-29
+
+Décision :
+
+- bottom navigation Expo Router avec 4 onglets : Aujourd’hui, Objectifs, Progression, Profil ;
+- routes fines dans `src/app/(tabs)/`, écrans dans `src/features/` ;
+- thème GoalFlow appliqué à la tab bar via `useTheme()` ;
+- icônes via `expo-symbols` (SF Symbols / Material selon plateforme).
+
+Pourquoi :
+
+- alignement avec `docs/UI_UX_GUIDE.md` ;
+- séparation navigation (`app/`) / UI feature (`features/`) ;
+- V1 sans logique métier ni stockage.
+
+Conséquences :
+
+- chaque onglet affiche un placeholder stylé en attendant les phases fonctionnelles ;
+- le showcase design system est déplacé vers `/dev/design-system` (voir ADR-004).

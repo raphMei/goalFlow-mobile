@@ -1,8 +1,8 @@
 /**
  * Showcase temporaire du design system GoalFlow.
  *
- * ⚠️ TEMPORAIRE — utilisé pour la validation visuelle des composants UI de base.
- * À retirer une fois la feature validée : remettre TodayScreen à la place.
+ * ⚠️ TEMPORAIRE — route dev `/dev/design-system` pour validation visuelle.
+ * Ne plus brancher sur TodayScreen ni un onglet de la bottom navigation.
  */
 import type { ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';

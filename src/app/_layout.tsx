@@ -49,6 +49,10 @@ function RootLayoutNav() {
     <ThemeProvider value={createNavigationTheme(colorScheme)}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="dev/design-system"
+          options={{ headerShown: false, title: 'Design System' }}
+        />
       </Stack>
     </ThemeProvider>
   );
