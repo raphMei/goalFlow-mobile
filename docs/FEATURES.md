@@ -43,7 +43,7 @@ Règles :
 - [x] Créer Badge
 - [x] Créer ProgressBar
 - [x] Créer TaskCard
-- [ ] Créer GoalCard
+- [~] Créer GoalCard
 
 ---
 

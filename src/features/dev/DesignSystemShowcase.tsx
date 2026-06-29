@@ -14,6 +14,7 @@ import { Card } from '@/shared/components/Card';
 import { GoalPill } from '@/shared/components/GoalPill';
 import { ProgressBar } from '@/shared/components/ProgressBar';
 import { ScreenContainer } from '@/shared/components/ScreenContainer';
+import { GoalCard } from '@/shared/components/GoalCard';
 import { TaskCard } from '@/shared/components/TaskCard';
 import { spacing } from '@/shared/theme/spacing';
 
@@ -100,6 +101,71 @@ export function DesignSystemShowcase() {
             <GoalPill goalKey="project" label="Projet" />
             <GoalPill goalKey="spirituality" label="Spiritualité" />
             <GoalPill goalKey="sleep" label="Sommeil" />
+          </View>
+        </Section>
+
+        <Section title="GoalCard">
+          <View style={styles.column}>
+            <GoalCard
+              title="Devenir plus athlétique"
+              description="Renforcer l'endurance et la force progressivement."
+              category="sport"
+              progressPercent={62}
+              weeklyProgressLabel="3/5 séances cette semaine"
+              nextActionLabel="Séance upper body — 45 min"
+              priority="high"
+              onPress={() => undefined}
+            />
+            <GoalCard
+              title="Améliorer ma mobilité"
+              description="Gagner en souplesse au quotidien, hanches et dos."
+              category="mobility"
+              progressPercent={45}
+              weeklyProgressLabel="2/4 sessions cette semaine"
+              priority="medium"
+              onPress={() => undefined}
+            />
+            <GoalCard
+              title="Progresser en développement"
+              description="Consolider TypeScript et avancer sur un side project."
+              category="learning"
+              progressPercent={30}
+              weeklyProgressLabel="2/3 blocs focus cette semaine"
+              nextActionLabel="Module auth — 30 min"
+              onPress={() => undefined}
+            />
+            <GoalCard
+              title="Routine spirituelle"
+              description="Ancrer un moment calme chaque matin."
+              category="spirituality"
+              nextActionLabel="Respiration et gratitude — 10 min"
+              onPress={() => undefined}
+            />
+            <GoalCard
+              title="Avancer sur projet personnel"
+              description="Lancer la landing et poser les bases produit."
+              category="project"
+              progressPercent={78}
+              weeklyProgressLabel="4/5 tâches clés cette semaine"
+              priority="low"
+              onPress={() => undefined}
+            />
+            <GoalCard
+              title="Devenir plus athlétique"
+              description="Programme muscu terminé — objectif atteint."
+              category="sport"
+              progressPercent={100}
+              weeklyProgressLabel="5/5 séances cette semaine"
+              status="completed"
+            />
+            <GoalCard
+              title="Améliorer ma mobilité"
+              description="Pause temporaire le temps de récupérer."
+              category="mobility"
+              progressPercent={20}
+              weeklyProgressLabel="1/4 sessions cette semaine"
+              status="paused"
+            />
           </View>
         </Section>
 
