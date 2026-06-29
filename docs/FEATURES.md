@@ -82,13 +82,13 @@ Règles :
 
 ## Phase 5 — Templates
 
-- [ ] Template “Devenir plus athlétique”
-- [ ] Template “Améliorer mobilité”
-- [ ] Template “Mieux manger”
-- [ ] Template “Progresser en développement”
-- [ ] Template “Routine spirituelle”
-- [ ] Template “Avancer sur projet personnel”
-- [ ] Template “Améliorer sommeil”
+- [x] Template “Devenir plus athlétique”
+- [x] Template “Améliorer mobilité”
+- [x] Template “Mieux manger”
+- [x] Template “Progresser en développement”
+- [x] Template “Routine spirituelle”
+- [x] Template “Avancer sur projet personnel”
+- [x] Template “Améliorer sommeil”
 
 ---
 
