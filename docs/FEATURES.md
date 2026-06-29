@@ -95,14 +95,13 @@ Règles :
 
 ## Phase 6 — Moteur de génération
 
-- [ ] Créer generateDailyPlan
-- [ ] Générer les tâches depuis objectifs actifs
-- [ ] Adapter selon remote / office / free / rest
+- [x] Créer generateDailyPlan
+- [x] Générer les tâches depuis objectifs actifs
+- [x] Adapter selon remote / office / free / rest
 - [ ] Trier les tâches par heure
-- [ ] Limiter la charge quotidienne
+- [x] Limiter la charge quotidienne
 - [ ] Gérer versions courtes
-- [ ] Gérer les jours de repos planifiés
-- [ ] Prévoir logique kasher future
+- [x] Gérer les jours de repos planifiés
 
 ---
 
