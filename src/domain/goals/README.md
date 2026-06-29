@@ -1,5 +1,5 @@
 # `domain/goals/`
 
-Règles et types liés aux **objectifs** utilisateur.
+Types métier liés aux **objectifs** utilisateur.
 
-Exemples futurs : validation d'un objectif, statut actif/archivé, contraintes de création.
+Fichier V1 : `goal.types.ts` — `GoalCategory`, `Goal`, `GoalTemplate`, `RecommendedAction`.

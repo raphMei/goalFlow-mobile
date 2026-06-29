@@ -1,29 +1,9 @@
-import { StyleSheet, View } from 'react-native';
-
-import { AppText } from '@/shared/components/AppText';
-import { ScreenContainer } from '@/shared/components/ScreenContainer';
-import { spacing } from '@/shared/theme/spacing';
+/**
+ * ⚠️ TEMPORAIRE — showcase design system pour validation visuelle.
+ * Remettre le contenu original de TodayScreen une fois la feature validée.
+ */
+import { DesignSystemShowcase } from '@/features/dev/DesignSystemShowcase';
 
 export function TodayScreen() {
-  return (
-    <ScreenContainer>
-      <View style={styles.content}>
-        <AppText variant="title">Aujourd&apos;hui</AppText>
-        <AppText variant="subtitle" muted style={styles.subtitle}>
-          Votre journée guidée arrive bientôt.
-        </AppText>
-      </View>
-    </ScreenContainer>
-  );
+  return <DesignSystemShowcase />;
 }
-
-const styles = StyleSheet.create({
-  content: {
-    flex: 1,
-    paddingTop: spacing.xl,
-    gap: spacing.sm,
-  },
-  subtitle: {
-    marginTop: spacing.xs,
-  },
-});

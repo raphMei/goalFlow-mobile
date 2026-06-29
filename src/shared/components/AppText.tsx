@@ -3,20 +3,44 @@ import { Text, type TextProps } from 'react-native';
 import { useTheme } from '@/shared/hooks/useTheme';
 import { typography } from '@/shared/theme/typography';
 
-type AppTextVariant = 'title' | 'subtitle' | 'body';
+type AppTextVariant = 'title' | 'subtitle' | 'body' | 'label' | 'caption';
+type AppTextTone = 'default' | 'muted' | 'primary' | 'success' | 'warning' | 'error';
 
 type AppTextProps = TextProps & {
   variant?: AppTextVariant;
+  /** @deprecated Préférer tone="muted" */
   muted?: boolean;
+  tone?: AppTextTone;
 };
 
-export function AppText({ variant = 'body', muted = false, style, ...props }: AppTextProps) {
-  const { colors } = useTheme();
+function resolveTextColor(
+  tone: AppTextTone,
+  muted: boolean,
+  colors: ReturnType<typeof useTheme>['colors'],
+): string {
+  if (tone !== 'default') {
+    const toneColors: Record<Exclude<AppTextTone, 'default'>, string> = {
+      muted: colors.textSecondary,
+      primary: colors.primary,
+      success: colors.success,
+      warning: colors.warning,
+      error: colors.error,
+    };
+    return toneColors[tone];
+  }
 
-  return (
-    <Text
-      style={[typography[variant], { color: muted ? colors.textMuted : colors.text }, style]}
-      {...props}
-    />
-  );
+  return muted ? colors.textSecondary : colors.textPrimary;
+}
+
+export function AppText({
+  variant = 'body',
+  muted = false,
+  tone = 'default',
+  style,
+  ...props
+}: AppTextProps) {
+  const { colors } = useTheme();
+  const color = resolveTextColor(tone, muted, colors);
+
+  return <Text style={[typography[variant], { color }, style]} {...props} />;
 }

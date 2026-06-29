@@ -1,5 +1,5 @@
 # `domain/planning/`
 
-Moteur de **planification quotidienne** : génération et adaptation du plan du jour.
+Types de **planification quotidienne**.
 
-Exemples futurs : `generateDailyPlan`, `adaptPlanToSchedule`.
+Fichier V1 : `planning.types.ts` — `WorkMode`, `UserSchedule`, `DayContext`, `DailyPlanItem`.
