@@ -61,18 +61,18 @@ export function Button({
     <Pressable
       accessibilityRole="button"
       disabled={disabled}
-      style={({ pressed }) => [
+      style={(state) => [
         styles.base,
         {
           borderRadius: radius.lg,
-          opacity: disabled ? 0.5 : pressed ? 0.85 : 1,
+          opacity: disabled ? 0.5 : state.pressed ? 0.85 : 1,
           width: fullWidth ? '100%' : undefined,
           backgroundColor: variantStyles.backgroundColor,
           borderColor: variantStyles.borderColor,
           borderWidth: variantStyles.borderWidth,
         },
         sizeStyles,
-        typeof style === 'function' ? style({ pressed, hovered: false }) : style,
+        typeof style === 'function' ? style(state) : style,
       ]}
       {...props}
     >

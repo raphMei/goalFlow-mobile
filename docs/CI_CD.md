@@ -26,7 +26,7 @@ Chaque feature suit un cycle Git strict. Voir aussi [SETUP.md](./SETUP.md#git-wo
 | `feature/`  | Nouvelle fonctionnalité        | `feature/bottom-navigation` |
 | `fix/`      | Correction de bug              | `fix/task-card-layout`      |
 | `chore/`    | Maintenance, docs, CI          | `chore/update-eslint`       |
-| `refactor/` | Refactoring sans changement UX | `refactor/domain-types`   |
+| `refactor/` | Refactoring sans changement UX | `refactor/domain-types`     |
 
 ### Création de PR
 
