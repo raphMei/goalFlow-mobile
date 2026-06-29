@@ -44,7 +44,14 @@ Créer :
 Le fichier .gitignore doit contenir :
 .env
 .env.local
-.env.\*.local
+.env.*.local
+
+Règles strictes :
+
+- `.env` ne doit jamais être versionné dans Git ;
+- aucune clé secrète ne doit être présente dans le code source ;
+- les variables Expo publiques doivent commencer par `EXPO_PUBLIC_` ;
+- ne jamais mettre de clé admin ou service role Supabase dans l’app mobile.
 
 ## Données utilisateur
 

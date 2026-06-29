@@ -17,12 +17,12 @@ npm start
 
 ## Commandes
 
-| Commande | Description |
-|----------|-------------|
-| `npm start` | Dev server Expo |
-| `npm run ios` | Simulateur iOS |
+| Commande          | Description       |
+| ----------------- | ----------------- |
+| `npm start`       | Dev server Expo   |
+| `npm run ios`     | Simulateur iOS    |
 | `npm run android` | Émulateur Android |
-| `npm run web` | Navigateur web |
+| `npm run web`     | Navigateur web    |
 
 ## Structure du projet
 
@@ -55,10 +55,10 @@ git check-ignore -v .env  # .env doit être ignoré
 
 ## Documentation
 
-| Fichier | Usage |
-|---------|-------|
+| Fichier                              | Usage          |
+| ------------------------------------ | -------------- |
 | [PRODUCT_SPEC.md](./PRODUCT_SPEC.md) | Vision produit |
-| [FEATURES.md](./FEATURES.md) | Roadmap |
-| [ARCHITECTURE.md](./ARCHITECTURE.md) | Technique |
-| [UI_UX_GUIDE.md](./UI_UX_GUIDE.md) | Design |
-| [DECISIONS.md](./DECISIONS.md) | ADR |
+| [FEATURES.md](./FEATURES.md)         | Roadmap        |
+| [ARCHITECTURE.md](./ARCHITECTURE.md) | Technique      |
+| [UI_UX_GUIDE.md](./UI_UX_GUIDE.md)   | Design         |
+| [DECISIONS.md](./DECISIONS.md)       | ADR            |

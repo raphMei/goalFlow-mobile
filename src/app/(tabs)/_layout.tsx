@@ -17,11 +17,12 @@ export default function TabLayout() {
           borderTopColor: colors.tabBarBorder,
           borderTopWidth: 1,
         },
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Aujourd\'hui',
+          title: "Aujourd'hui",
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{

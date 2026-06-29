@@ -15,7 +15,7 @@ Règles :
 - [x] Initialiser Expo + React Native + TypeScript
 - [x] Configurer Expo Router
 - [ ] Vérifier le lancement sur iPhone / Android avec Expo Go
-- [ ] Configurer ESLint / Prettier
+- [x] Configurer ESLint / Prettier
 - [x] Créer la structure src
 - [ ] Créer le thème visuel
 - [ ] Créer les composants UI de base
@@ -175,6 +175,16 @@ Règles :
 - [ ] Nettoyage imports
 - [ ] Vérification TypeScript
 - [ ] Documentation décisions
+
+---
+
+## Phase 0b — CI / Qualité
+
+- [x] Créer workflow GitHub Actions PR Checks (`.github/workflows/pr-checks.yml`)
+- [x] Ajouter scripts qualité dans `package.json` (`typecheck`, `lint`, `format`, `test`, `ci`)
+- [x] Créer checklist PR (`docs/PR_CHECKLIST.md`)
+- [x] Documenter CI/CD (`docs/CI_CD.md`)
+- [ ] Protéger la branche `main` manuellement dans GitHub (voir `docs/CI_CD.md`)
 
 ---
 

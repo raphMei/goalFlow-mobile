@@ -22,14 +22,14 @@ npm start
 
 ## Documentation
 
-| Document | Description |
-|----------|-------------|
-| [docs/PRODUCT_SPEC.md](./docs/PRODUCT_SPEC.md) | Vision et parcours produit |
-| [docs/FEATURES.md](./docs/FEATURES.md) | Roadmap feature par feature |
-| [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) | Architecture technique |
-| [docs/UI_UX_GUIDE.md](./docs/UI_UX_GUIDE.md) | Guide UI/UX |
-| [docs/DECISIONS.md](./docs/DECISIONS.md) | Journal des décisions (ADR) |
-| [docs/SETUP.md](./docs/SETUP.md) | Installation et commandes |
+| Document                                       | Description                 |
+| ---------------------------------------------- | --------------------------- |
+| [docs/PRODUCT_SPEC.md](./docs/PRODUCT_SPEC.md) | Vision et parcours produit  |
+| [docs/FEATURES.md](./docs/FEATURES.md)         | Roadmap feature par feature |
+| [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) | Architecture technique      |
+| [docs/UI_UX_GUIDE.md](./docs/UI_UX_GUIDE.md)   | Guide UI/UX                 |
+| [docs/DECISIONS.md](./docs/DECISIONS.md)       | Journal des décisions (ADR) |
+| [docs/SETUP.md](./docs/SETUP.md)               | Installation et commandes   |
 
 ## Philosophie de développement
 

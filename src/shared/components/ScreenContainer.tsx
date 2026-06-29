@@ -29,7 +29,8 @@ export function ScreenContainer({
         },
         style,
       ]}
-      {...props}>
+      {...props}
+    >
       {children}
     </View>
   );

@@ -59,3 +59,12 @@ Avant de terminer une étape :
 - vérifier logique métier ;
 - vérifier séparation domain/features/infrastructure ;
 - vérifier qu’aucun secret n’est exposé.
+
+## Definition of Done
+
+Aucune feature ne doit être considérée terminée tant que :
+
+- `npm run ci` passe en local ;
+- la CI GitHub (**PR Checks**) passe sur la PR ;
+- la checklist PR (`docs/PR_CHECKLIST.md`) est respectée ;
+- `docs/FEATURES.md` est mis à jour (cocher uniquement si réellement terminé).
