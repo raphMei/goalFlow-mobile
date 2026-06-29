@@ -14,6 +14,7 @@ import { Card } from '@/shared/components/Card';
 import { GoalPill } from '@/shared/components/GoalPill';
 import { ProgressBar } from '@/shared/components/ProgressBar';
 import { ScreenContainer } from '@/shared/components/ScreenContainer';
+import { TaskCard } from '@/shared/components/TaskCard';
 import { spacing } from '@/shared/theme/spacing';
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
@@ -99,6 +100,78 @@ export function DesignSystemShowcase() {
             <GoalPill goalKey="project" label="Projet" />
             <GoalPill goalKey="spirituality" label="Spiritualité" />
             <GoalPill goalKey="sleep" label="Sommeil" />
+          </View>
+        </Section>
+
+        <Section title="TaskCard">
+          <View style={styles.column}>
+            <TaskCard
+              title="Étirements matinaux"
+              description="Ouverture hanches et thoracique en douceur."
+              timeLabel="07:30"
+              durationMinutes={15}
+              goalCategory="mobility"
+              goalLabel="Mobilité"
+              taskKind="timer"
+              hasShortVersion
+              onPress={() => undefined}
+              onToggleDone={() => undefined}
+            />
+            <TaskCard
+              title="Préparer un bowl équilibré"
+              description="Légumes, protéines et féculents complets."
+              timeLabel="12:15"
+              durationMinutes={25}
+              goalCategory="nutrition"
+              goalLabel="Alimentation"
+              taskKind="recipe"
+              onPress={() => undefined}
+              onToggleDone={() => undefined}
+            />
+            <TaskCard
+              title="Séance upper body"
+              description="Développé, tractions assistées, rowing."
+              timeLabel="18:00"
+              durationMinutes={45}
+              goalCategory="sport"
+              goalLabel="Muscu"
+              status="in_progress"
+              taskKind="strength"
+              onPress={() => undefined}
+              onToggleDone={() => undefined}
+            />
+            <TaskCard
+              title="Bloc focus TypeScript"
+              description="Avancer sur un module du side project."
+              timeLabel="20:30"
+              durationMinutes={30}
+              goalCategory="learning"
+              goalLabel="Apprentissage"
+              taskKind="learning"
+              onPress={() => undefined}
+              onToggleDone={() => undefined}
+            />
+            <TaskCard
+              title="Moment de gratitude"
+              description="Respiration calme et intention du jour."
+              timeLabel="21:00"
+              durationMinutes={10}
+              goalCategory="spirituality"
+              goalLabel="Spiritualité"
+              taskKind="spiritual"
+              onPress={() => undefined}
+              onToggleDone={() => undefined}
+            />
+            <TaskCard
+              title="Marche active"
+              timeLabel="08:00"
+              durationMinutes={20}
+              goalCategory="mobility"
+              goalLabel="Mobilité"
+              status="completed"
+              taskKind="steps"
+              onToggleDone={() => undefined}
+            />
           </View>
         </Section>
       </View>

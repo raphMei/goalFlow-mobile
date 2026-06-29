@@ -92,7 +92,7 @@ Conséquences :
 
 - `TodayScreen` affiche un placeholder stylé jusqu’à l’implémentation de la Phase 7 ;
 - en production (`!__DEV__`), `/dev/design-system` redirige vers l’accueil ;
-- `TaskCard` / `GoalCard` restent hors scope de cette étape.
+- `TaskCard` / `GoalCard` restent hors scope de cette étape — **TaskCard livré en V1** (voir ADR-008) ; `GoalCard` reste à faire.
 
 ---
 
@@ -171,3 +171,31 @@ Conséquences :
 - les écrans détail de tâche devront enrichir ou remplacer les `TaskDetail` minimaux ;
 - `buildDayContext` et l’assignation horaire (`scheduledAt`) restent des features séparées ;
 - la logique kasher (`kosherRequired`) n’est pas appliquée par le moteur en V1.
+
+---
+
+## ADR-008 — `TaskCard` V1 (primitive UI visuelle)
+
+Date : 2026-06-29
+
+Décision :
+
+- `TaskCard` est une **primitive UI visuelle** dans `src/shared/components/` — affichage uniquement, sans logique métier ;
+- le composant **ne modifie pas le statut** lui-même : il reçoit `status` en prop et délègue les actions via `onPress` / `onToggleDone` depuis le parent (écran ou hook feature) ;
+- la prop `goalCategory: GoalCategory` indexe `goalColors` directement en V1 (mapper dédié reporté, voir ADR-003) ;
+- le CTA « Commencer » est un bouton **local** teinté avec `goal.main` et texte `colors.onPrimary` — pas de refactor du composant `Button` ;
+- **light mode** : fond `goal.soft` + accent gauche `goal.main` ;
+- **dark mode** : fond `colors.surface` + accent gauche `goal.main` (éviter les grands pastels clairs) ;
+- validation visuelle via la section TaskCard du `DesignSystemShowcase` (`/dev/design-system`).
+
+Pourquoi :
+
+- livrer une carte réutilisable pour l’écran Aujourd’hui sans coupler UI et domaine au-delà des types ;
+- conserver l’énergie visuelle par objectif (CTA et accent) tout en restant compatible light/dark ;
+- garder le check-off et la navigation réelle hors du composant jusqu’à la Phase 7.
+
+Conséquences :
+
+- `TodayScreen` n’intègre pas encore `TaskCard` — branchement prévu Phase 7 ;
+- un mapper `GoalCategory` ↔ thème ou des variantes `Button` goal-colored pourront venir plus tard si besoin ;
+- `GoalCard` reste une feature UI distincte.
