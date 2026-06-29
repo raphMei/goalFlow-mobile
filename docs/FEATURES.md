@@ -19,7 +19,7 @@ Règles :
 - [x] Configurer ESLint / Prettier
 - [x] Créer la structure src
 - [x] Créer le thème visuel
-- [~] Créer les composants UI de base
+- [x] Créer les composants UI de base
 
 ---
 
@@ -36,12 +36,12 @@ Règles :
 
 ## Phase 2 — UI de base
 
-- [~] Créer ScreenContainer
-- [~] Créer AppText
-- [~] Créer Button
-- [~] Créer Card
-- [~] Créer Badge
-- [~] Créer ProgressBar
+- [x] Créer ScreenContainer
+- [x] Créer AppText
+- [x] Créer Button
+- [x] Créer Card
+- [x] Créer Badge
+- [x] Créer ProgressBar
 - [ ] Créer TaskCard
 - [ ] Créer GoalCard
 
