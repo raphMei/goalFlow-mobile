@@ -25,12 +25,12 @@ Règles :
 
 ## Phase 1 — Navigation
 
-- [ ] Créer la bottom navigation
-- [ ] Créer l’onglet Aujourd’hui
-- [ ] Créer l’onglet Objectifs
-- [ ] Créer l’onglet Progression
-- [ ] Créer l’onglet Profil
-- [ ] Créer les écrans vides correspondants
+- [x] Créer la bottom navigation
+- [x] Créer l’onglet Aujourd’hui
+- [x] Créer l’onglet Objectifs
+- [x] Créer l’onglet Progression
+- [x] Créer l’onglet Profil
+- [x] Créer les écrans vides correspondants
 
 ---
 

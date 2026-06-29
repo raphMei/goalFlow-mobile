@@ -20,7 +20,7 @@ Import groupé : `import { Button, Card } from '@/shared/components'`.
 
 Hook : `useTheme()` depuis `@/shared/hooks/useTheme`.
 
-Showcase temporaire : `src/features/dev/DesignSystemShowcase.tsx` (onglet Aujourd'hui).
+Showcase temporaire (dev only) : route `/dev/design-system` — voir `src/features/dev/README.md`.
 
 ## Legacy Expo (ne pas utiliser pour les nouveaux écrans)
 
