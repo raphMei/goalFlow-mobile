@@ -1,5 +1,56 @@
 # Workflow Rules — GoalFlow Mobile
 
+## Git workflow obligatoire
+
+**Avant toute nouvelle feature**, vérifier l’état Git. Ne jamais coder une feature directement sur `main`.
+
+### Démarrage d’une feature
+
+1. Vérifier la branche courante :
+   ```bash
+   git branch --show-current
+   ```
+2. Vérifier qu’il n’y a pas de changements non commités :
+   ```bash
+   git status
+   ```
+3. Si on est sur `main` **et** que le working tree est propre, créer une branche dédiée :
+   ```bash
+   git checkout -b feature/<nom-feature>
+   ```
+4. Si des changements non commités existent, **ne pas créer de branche** sans prévenir l’utilisateur. Expliquer :
+   - quels fichiers sont modifiés ;
+   - si ces changements appartiennent à la feature précédente ;
+   - s’il faut les commit, les stash ou les garder.
+5. Ne jamais mélanger plusieurs features dans une même branche.
+
+### Nommage des branches
+
+| Préfixe      | Usage                          | Exemple                      |
+| ------------ | ------------------------------ | ---------------------------- |
+| `feature/`   | Nouvelle fonctionnalité        | `feature/bottom-navigation`  |
+| `fix/`       | Correction de bug              | `fix/task-card-layout`       |
+| `chore/`     | Maintenance, docs, CI          | `chore/update-eslint`        |
+| `refactor/`  | Refactoring sans changement UX | `refactor/domain-types`      |
+
+Utiliser des noms courts, en kebab-case, décrivant une seule intention.
+
+### Fin d’une feature
+
+1. Lancer `npm run ci` en local.
+2. Résumer les fichiers modifiés.
+3. Proposer un message de commit clair (1–2 phrases, orienté « pourquoi »).
+4. Pousser la branche : `git push -u origin HEAD`.
+5. Préparer la PR (voir `docs/PR_CHECKLIST.md`).
+6. **Ne jamais merger sans validation** de l’utilisateur.
+
+### Règles strictes
+
+- Ne jamais coder une feature directement sur `main`.
+- Ne jamais mélanger plusieurs features dans une même branche.
+- La CI (`npm run ci` + PR Checks GitHub) doit être verte avant merge.
+- La branche `main` est protégée sur GitHub (voir `docs/CI_CD.md`).
+
 ## Développement étape par étape
 
 Toujours avancer par petites étapes.
@@ -23,6 +74,7 @@ Le fichier docs/FEATURES.md est la source de vérité.
 
 Avant de commencer :
 
+- vérifier Git (branche dédiée, working tree propre — voir section Git workflow) ;
 - lire docs/FEATURES.md ;
 - identifier la feature ;
 - passer la feature en [~] si elle commence.

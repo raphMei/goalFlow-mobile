@@ -2,6 +2,16 @@
 
 Utiliser cette checklist avant de demander la review ou de merger vers `main`.
 
+## Git workflow obligatoire
+
+- [ ] La feature a été développée sur une branche dédiée (`feature/`, `fix/`, `chore/` ou `refactor/`) — **pas sur `main`**
+- [ ] La branche porte un nom clair en kebab-case (`feature/bottom-navigation`)
+- [ ] Une seule intention par branche (pas de mélange de features)
+- [ ] `npm run ci` passe en local avant push
+- [ ] La branche a été poussée sur le remote (`git push -u origin HEAD`)
+- [ ] La PR est ouverte vers `main` (pas de merge direct)
+- [ ] **Ne pas merger sans validation explicite**
+
 ## Feature et branche
 
 - [ ] La PR est liée à une feature documentée dans [FEATURES.md](./FEATURES.md)

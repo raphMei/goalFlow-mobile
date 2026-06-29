@@ -1,5 +1,47 @@
 # CI/CD — GoalFlow Mobile
 
+## Git workflow obligatoire
+
+Chaque feature suit un cycle Git strict. Voir aussi [SETUP.md](./SETUP.md#git-workflow-obligatoire) et [PR_CHECKLIST.md](./PR_CHECKLIST.md).
+
+### Une branche par feature
+
+- **Interdit** de coder directement sur `main`.
+- **Interdit** de mélanger plusieurs features dans une même branche.
+- Avant de commencer, vérifier :
+  ```bash
+  git branch --show-current
+  git status
+  ```
+- Si on est sur `main` avec un working tree propre :
+  ```bash
+  git checkout -b feature/<nom-feature>
+  ```
+- Si des changements non commités existent, ne pas créer de branche sans accord — expliquer quels fichiers sont modifiés et proposer commit, stash ou conservation.
+
+### Nommage des branches
+
+| Préfixe     | Usage                          | Exemple                     |
+| ----------- | ------------------------------ | --------------------------- |
+| `feature/`  | Nouvelle fonctionnalité        | `feature/bottom-navigation` |
+| `fix/`      | Correction de bug              | `fix/task-card-layout`      |
+| `chore/`    | Maintenance, docs, CI          | `chore/update-eslint`       |
+| `refactor/` | Refactoring sans changement UX | `refactor/domain-types`   |
+
+### Création de PR
+
+1. Terminer la feature et lancer `npm run ci` en local.
+2. Résumer les fichiers modifiés et proposer un message de commit.
+3. Pousser la branche : `git push -u origin HEAD`.
+4. Ouvrir une PR vers `main` en suivant [PR_CHECKLIST.md](./PR_CHECKLIST.md).
+5. Attendre que la CI **PR Checks** soit verte.
+6. **Ne pas merger sans validation explicite.**
+
+### CI obligatoire avant merge
+
+- `npm run ci` doit passer en local **et** sur GitHub avant tout merge.
+- Sans protection de branche, la CI tourne mais ne bloque pas le merge — configurer la protection (section ci-dessous).
+
 ## Rôle de la CI
 
 La CI GitHub Actions vérifie automatiquement chaque Pull Request vers `main` avant merge.

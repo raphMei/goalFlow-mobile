@@ -7,6 +7,7 @@ Règles :
 - [x] terminé, testé et validé
 - Ne jamais cocher une feature sans test.
 - Une feature doit être petite et relisible.
+- **Chaque feature commence sur une branche Git dédiée** (`feature/<nom>`) — jamais sur `main`. Voir [SETUP.md](./SETUP.md#git-workflow-obligatoire).
 
 ---
 
