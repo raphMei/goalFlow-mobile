@@ -69,3 +69,25 @@ Conséquences :
 - `GoalColorKey` conserve les mêmes clés string en attendant le mapper ;
 - `generateDailyPlan`, les templates réels, l’onboarding et le stockage restent hors scope de cette étape ;
 - les règles métier (`isShabbat`, génération, validation) viendront dans des features ultérieures.
+
+---
+
+## ADR-004 — Composants UI de base (primitives)
+
+Date : 2026-06-29
+
+Décision :
+
+- les composants UI de base (`ScreenContainer`, `AppText`, `Button`, `Card`, `Badge`, `ProgressBar`) sont des **primitives génériques** réutilisables dans tout l’app ;
+- `TaskCard` et `GoalCard` seront créés plus tard, lorsque les types métier et l’écran Aujourd’hui seront prêts ;
+- `DesignSystemShowcase` (branché temporairement sur l’onglet Aujourd’hui) sert uniquement à la validation visuelle et sera retiré une fois les écrans réels en place.
+
+Pourquoi :
+
+- séparer les primitives UI des composants métier évite de figer trop tôt des cartes couplées au domaine ;
+- le showcase permet de valider le design system sans attendre la navigation ni les écrans fonctionnels.
+
+Conséquences :
+
+- `TodayScreen` affiche le showcase jusqu’à l’implémentation de la Phase 7 ;
+- `TaskCard` / `GoalCard` restent hors scope de cette étape.
