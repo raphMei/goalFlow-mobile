@@ -54,16 +54,22 @@ Exemples :
 
 V1 :
 
-- Shabbat neutralisé ;
+- jours de repos planifiés (choisis par l’utilisateur, ex. samedi) ;
+- jours légers à charge réduite ;
+- nombre de jours actifs par semaine ;
+- protection des streaks pendant les repos planifiés ;
 - présentiel/télétravail ;
 - charge quotidienne réaliste.
 
 Plus tard :
 
-- kasher ;
+- kasher (préférence alimentaire, indépendante du calendrier) ;
+- contraintes personnelles spécifiques en préférences utilisateur ;
 - Supabase ;
 - IA ;
 - notifications.
+
+GoalFlow est une app universelle : aucune règle religieuse n’est codée en dur dans le cœur métier.
 
 ## Utilisateur V1
 

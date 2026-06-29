@@ -68,7 +68,7 @@ Conséquences :
 
 - `GoalColorKey` conserve les mêmes clés string en attendant le mapper ;
 - `generateDailyPlan`, les templates réels, l’onboarding et le stockage restent hors scope de cette étape ;
-- les règles métier (`isShabbat`, génération, validation) viendront dans des features ultérieures.
+- les règles métier (dérivation `DayContext`, génération, validation, streaks) viendront dans des features ultérieures.
 
 ---
 
@@ -117,3 +117,28 @@ Conséquences :
 
 - chaque onglet affiche un placeholder stylé en attendant les phases fonctionnelles ;
 - le showcase design system est déplacé vers `/dev/design-system` (voir ADR-004).
+
+---
+
+## ADR-006 — Modèle générique de jours de repos
+
+Date : 2026-06-29
+
+Décision :
+
+- remplacer la logique Shabbat (`shabbatEnabled`, `isShabbat`) par un modèle universel basé sur le rythme hebdomadaire choisi par l’utilisateur ;
+- `UserSchedule` expose `activeDaysPerWeek`, `restDays`, `lightDays`, `protectStreaksOnRestDays` ;
+- `DayContext` expose `weekday`, `isRestDay`, `isLightDay`, `restReason` ;
+- conserver `kosherEnabled` uniquement comme préférence alimentaire future, séparée du calendrier.
+
+Pourquoi :
+
+- GoalFlow doit être une app universelle, pas limitée à un profil religieux ;
+- un utilisateur peut choisir le samedi comme jour de repos sans que ce soit une règle codée en dur ;
+- le futur moteur `generateDailyPlan` a besoin de `weekday` pour appliquer repos, jours légers et actions weekly.
+
+Conséquences :
+
+- suppression directe de `shabbatEnabled` et `isShabbat` (aucun consommateur en production) ;
+- la validation (`activeDaysPerWeek` vs `restDays`), la dérivation `DayContext` et la protection des streaks restent hors scope de cette étape ;
+- les contraintes personnelles spécifiques pourront être ajoutées plus tard comme préférences utilisateur.
